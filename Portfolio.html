@@ -1,145 +1,319 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<title>Portifolio Jefferson</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2020.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2018.css">
-<style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio — Jefferson Gomes</title>
+
+  <!-- Dependências existentes (mantidas por você) -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    html,body,h1,h2,h3,h4,h5,h6 { font-family: "Roboto", sans-serif; }
+    /* Layout tweaks */
+    .profile-card img { object-fit: cover; height: 320px; }
+    .section-card { transition: box-shadow .22s ease, transform .12s ease; }
+    .section-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.15); transform: translateY(-4px); }
+
+    /* Tags (tech badges) */
+    .tag-list { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0 12px 0; }
+    .tag { background:#f1f1f1; color:#333; padding:6px 10px; border-radius:12px; font-size:13px; }
+    .tag--dark { background:#e9e9ee; color:#111; }
+
+    /* Progress bars */
+    .progress { height:14px; background:#eee; border-radius:999px; overflow:hidden; }
+    .progress > .bar {
+      height:100%;
+      background: linear-gradient(90deg, #0d9488, #06b6d4);
+      width:0%;
+      animation: fillBar 1.2s forwards;
+    }
+    @keyframes fillBar { to { width: var(--w); } }
+
+    /* Small visual helpers */
+    .muted { color:#666; font-size:14px; }
+    .accent { color:#009688; }
+    .section-title { display:flex; align-items:center; gap:12px; }
+    .top-education { border-left:4px solid #009688; padding-left:12px; }
+
+    /* Responsive minor fixes */
+    @media (max-width:900px) {
+      .profile-card img { height:220px; }
+    }
+  </style>
 </head>
 <body class="w3-light-grey">
 
 <!-- Page Container -->
 <div class="w3-content w3-margin-top" style="max-width:1400px;">
 
-  <!-- The Grid -->
+  <!-- Grid -->
   <div class="w3-row-padding">
-  
-    <!-- Left Column -->
+
+    <!-- LEFT COLUMN -->
     <div class="w3-third">
-    
-      <div class="w3-white w3-text-grey w3-card-4">
+      <div class="w3-white w3-text-grey w3-card-4 profile-card section-card">
         <div class="w3-display-container">
-          <img src="https://github.com/Raiobrine/Portifolio/blob/main/foto.jpg?raw=true" style="width:100%" alt="Avatar">
+          <!-- Substitua o src abaixo se preferir outro caminho -->
+          <img src="https://github.com/jeffersongomesdamd/Portifolio/blob/main/photo_website.jpg?raw=true" style="width:100%" alt="Avatar">
           <div class="w3-display-bottomleft w3-container w3-text-black">
             <h2 class="w3-text-white">Jefferson Gomes</h2>
           </div>
         </div>
-        <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Data Scientist</p>
+
+        <div class="w3-container" style="padding-bottom:18px;">
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>
+            Data Scientist | Computer Scientist</p>
           <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Campina Grande, PB</p>
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>jeffersongomesdamd@gmail.com</p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>+55 (83) 986040568</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>+55 (83) 98604-0568</p>
+
           <hr>
 
+          <!-- Skills (ordem e valores atualizados) -->
           <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-          <p>Python</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
-              <div class="w3-center w3-text-white">80%</div>
-            </div>
+
+          <p class="muted">Data Analysis</p>
+          <div class="progress" aria-hidden>
+            <div class="bar" style="--w:80%"></div>
           </div>
-          <p>Data Analysis</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:70%">
-              <div class="w3-center w3-text-white">70%</div>
-            </div>
+
+          <p class="muted">Python</p>
+          <div class="progress" aria-hidden>
+            <div class="bar" style="--w:70%"></div>
           </div>
-          <p>Photoshop</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:40%">40%</div>
+
+          <p class="muted">Artificial Intelligence &amp; Prompt Engineering</p>
+          <div class="progress" aria-hidden>
+            <div class="bar" style="--w:60%"></div>
           </div>
-          <p>Power BI</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:30%">30%</div>
+
+          <p class="muted">Power BI</p>
+          <div class="progress" aria-hidden>
+            <div class="bar" style="--w:30%"></div>
           </div>
+
           <br>
 
+          <!-- Languages -->
           <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
-          <p>Portuguese</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
-          </div>
-          <p>English</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:75%"></div>
-          </div>
-          <p>Spanish</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"></div>
-          </div>
+
+          <p class="muted">Portuguese (Native)</p>
+          <div class="progress"><div class="bar" style="--w:100%"></div></div>
+
+          <p class="muted">English</p>
+          <div class="progress"><div class="bar" style="--w:80%"></div></div>
+
+          <p class="muted">Spanish</p>
+          <div class="progress"><div class="bar" style="--w:25%"></div></div>
+
+          <p class="muted">Japanese</p>
+          <div class="progress"><div class="bar" style="--w:10%"></div></div>
+
           <br>
         </div>
-      </div><br>
+      </div>
 
-    <!-- End Left Column -->
+      <br>
     </div>
+    <!-- END LEFT COLUMN -->
 
-    <!-- Right Column -->
+    <!-- RIGHT COLUMN -->
     <div class="w3-twothird">
-    
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
-        <div class="w3-container">
+
+      <!-- WORK EXPERIENCE (container) -->
+      <div class="w3-container w3-card w3-white w3-margin-bottom section-card">
+        <h2 class="w3-text-grey w3-padding-16 section-title">
+          <i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>
+          Work Experience
+        </h2>
+
+        <!-- Job 1: Lacina / UFCG -->
+        <div class="w3-container w3-margin-bottom">
+          <h5 class="w3-opacity"><b>Software &amp; AI Development / Lacina - UFCG</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Nov 2024 — Oct 2025</h6>
+
+          <!-- tags -->
+          <div class="tag-list" aria-hidden>
+            <span class="tag tag--dark">Python</span>
+            <span class="tag tag--dark">Google Sheets</span>
+            <span class="tag tag--dark">Data Analysis</span>
+            <span class="tag tag--dark">PostgreSQL</span>
+            <span class="tag tag--dark">Pandas</span>
+            <span class="tag tag--dark">LLM</span>
+            <span class="tag tag--dark">Heuristics</span>
+            <span class="tag tag--dark">Figma</span>
+            <span class="tag tag--dark">Unit Tests</span>
+            <span class="tag tag--dark">Platform Tests</span>
+            <span class="tag tag--dark">Angular</span>
+            <span class="tag tag--dark">UI/UX</span>
+            <span class="tag tag--dark">Jira</span>
+            <span class="tag tag--dark">Scikit-Learn</span>
+            <span class="tag tag--dark">Artificial Intelligence</span>
+          </div>
+
+          <!-- responsibilities (EN) -->
+          <p><strong>Responsibilities:</strong><br>
+            ● Development of software, heuristics and AI models focused on text processing and NLP.<br>
+            ● Creation and evaluation of LLM-based solutions to support data-driven decision systems.<br>
+            ● AI team management focused on NLP, automation and model lifecycle (team leadership, technical direction).<br>
+            ● Development and validation of platform features with unit and integration tests.<br>
+            ● Complete platform prototyping in Figma prior to frontend implementation (UX/UI ownership and handoff).<br>
+            ● Task, assignment and sprint management using Jira (planning, backlog refinement, prioritization and tracking).<br>
+            ● Design and optimization of algorithmic heuristics for classification and automation pipelines.<br>
+            ● Structured data analysis using Python, Pandas and PostgreSQL.</p>
+
+          <hr>
+
+          <!-- responsibilities (PT-BR) -->
+          <p><strong>Responsabilidades:</strong><br>
+            ● Desenvolvimento de software, heurísticas e modelos de IA voltados para processamento textual e PLN.<br>
+            ● Criação e avaliação de soluções baseadas em LLM para sistemas de decisão orientados a dados.<br>
+            ● Gerência de equipe de Inteligência Artificial — condução técnica, mentorias e coordenação de entregas.<br>
+            ● Desenvolvimento e validação de funcionalidades da plataforma por meio de testes unitários e de integração.<br>
+            ● Prototipação completa da plataforma no Figma antes da implementação no frontend (responsável pelo fluxo UX/UI).<br>
+            ● Gerenciamento de tarefas, atribuições e sprints no Jira (planejamento, refinamento de backlog e acompanhamento de entregas).<br>
+            ● Desenho e otimização de heurísticas algorítmicas para pipelines de classificação e automação.<br>
+            ● Análise estruturada de dados usando Python, Pandas e PostgreSQL.</p>
+        </div>
+
+        <hr>
+
+        <!-- Job 2: NUTES -->
+        <div class="w3-container w3-margin-bottom">
           <h5 class="w3-opacity"><b>Data Scientist / NUTES</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2022 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-          <p>With the help of the team, we create, clean and classify SEFAZ product guidelines.</p>
-          <hr>
-          <p>Com a ajuda da equipe, criamos, limpamos e classificamos as pautas de produtos SEFAZ.</p>
-          <!-- Divisao de linha: <hr> -->
-        </div>
-      </div>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2022 — Oct 2024</h6>
 
-      <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-university fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Linkedin Learning</b></h5>
+          <div class="tag-list" aria-hidden>
+            <span class="tag">Python</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Apache Drill</span>
+          </div>
+
+          <p><strong>Responsibilities:</strong><br>
+            ● Process and classify SEFAZ product guideline data improving data quality and standardization.<br>
+            ● Develop, train and optimize ML models for automated classification pipelines.<br>
+            ● Monitor, debug and refine models to ensure reliable production inference.<br>
+            ● Query and structure datasets using PostgreSQL and Apache Drill for large-scale Parquet analysis.<br>
+            ● Technical leadership of a development team focused on computer vision for medical wound analysis.</p>
+
+          <hr>
+
+          <p><strong>Responsabilidades:</strong><br>
+            ● Tratamento e classificação de pautas fiscais (SEFAZ) garantindo melhor qualidade e padronização dos dados.<br>
+            ● Desenvolvimento e otimização de modelos de ML para classificação automática.<br>
+            ● Monitoramento, depuração e ajuste de modelos para garantir inferência confiável em produção.<br>
+            ● Consultas e estruturação de dados com PostgreSQL e Apache Drill para análise de Parquet em larga escala.<br>
+            ● Liderança técnica de equipe em iniciativas de visão computacional para análise de feridas.</p>
+        </div>
+
+        <!-- Backend Developer (mantido) -->
+        <div class="w3-container w3-margin-bottom">
+          <h5 class="w3-opacity"><b>Backend Developer / NUTES</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2023 — Oct 2023</h6>
+
+          <div class="tag-list" aria-hidden>
+            <span class="tag">Python</span>
+            <span class="tag">Flask</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Postman</span>
+          </div>
+
+          <p><strong>Responsibilities:</strong><br>
+            ● Development of REST APIs with Flask to expose fiscal billing data.<br>
+            ● API validation and contract testing using Postman.<br>
+            ● Query optimization and data extraction routines for CSV exports.</p>
+
+          <hr>
+
+          <p><strong>Responsabilidades:</strong><br>
+            ● Desenvolvimento de APIs REST com Flask para disponibilizar dados fiscais.<br>
+            ● Validação e testes de contrato de API com Postman.<br>
+            ● Otimização de consultas SQL e rotinas de extração para geração de CSV.</p>
+        </div>
+
+      </div> <!-- end work experience card -->
+
+      <!-- EDUCATION -->
+      <div class="w3-container w3-card w3-white section-card w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16 section-title">
+          <i class="fa fa-university fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>
+          Education
+        </h2>
+
+        <!-- Top Education highlighted -->
+        <div class="w3-container w3-card w3-round top-education w3-margin-bottom">
+          <h5 style="font-size:18px;">
+            <i class="fa fa-graduation-cap w3-text-teal"></i>
+            <b>UEPB</b>
+            <span class="w3-tag w3-teal w3-round" style="font-size:11px; margin-left:8px;">Top Education</span>
+          </h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2019 — 2023</h6>
+          <p><b>Computer Science – 8/8</b><br>Bachelor Degree</p>
+        </div>
+
+        <div class="w3-container w3-card w3-round top-education w3-margin-bottom">
+          <h5 style="font-size:18px;">
+            <i class="fa fa-graduation-cap w3-text-teal"></i>
+            <b>Descomplica</b>
+            <span class="w3-tag w3-teal w3-round" style="font-size:11px; margin-left:8px;">Top Education</span>
+          </h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2024 — 2025</h6>
+          <p><b>Pós-Graduação em Data Science</b></p>
+        </div>
+
+        <!-- Other trainings -->
+        <div class="w3-container w3-margin-bottom">
+          <h5 class="w3-opacity"><b>LinkedIn Learning</b></h5>
           <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2022</h6>
-          <p>Git and Github<br>Business Analysis</p>
-          <hr>
+          <p>Git and GitHub<br>Business Analysis<br>Excel<br>Power BI</p>
         </div>
-        <div class="w3-container">
+        <hr>
+
+        <div class="w3-container w3-margin-bottom">
           <h5 class="w3-opacity"><b>Udemy</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2020 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-          <p>Several courses</p>
-          <hr>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2020 — Current</h6>
+          <p>Power BI<br>Figma<br>MySQL<br>HTML<br>CSS</p>
         </div>
+        <hr>
+
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>UEPB</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2019 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-          <p>Computer Science - 7/8<br>Bachelor Degree</p><br>
+          <h5 class="w3-tag w3-teal w3-round"><b>Currently studying:</b></h5>
+          <p>Prompt Engineering<br>Node.js<br>Mongo.DB<br>Google Analytics</p>
         </div>
       </div>
 
-      <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Certificates</h2>
+      <!-- CERTIFICATES -->
+      <div class="w3-container w3-card w3-white section-card w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16 section-title">
+          <i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>
+          Certificates
+        </h2>
         <div class="w3-container">
-          <a href="https://drive.google.com/drive/folders/1ry2mHuQDDxObF8MCtREbpKeii0M-Dsjd?usp=sharing" target="_blank" rel="noopener noreferrer">Click Here!</a><br>
+          <h5 class="w3-tag w3-teal w3-round"><a href="https://drive.google.com/drive/folders/1ry2mHuQDDxObF8MCtREbpKeii0M-Dsjd?usp=sharing" target="_blank" rel="noopener noreferrer" style="color:white;text-decoration:none;">Click Here!</a></h5>
         </div>
       </div>
-    <!-- End Right Column -->
+
     </div>
-    
-  <!-- End Grid -->
-  </div>
-  
-  <!-- End Page Container -->
-</div>
+    <!-- END RIGHT COLUMN -->
 
+  </div> <!-- end row -->
+</div> <!-- end page container -->
+
+<!-- FOOTER -->
 <footer class="w3-container w3-teal w3-center w3-margin-top">
   <p>Find me on social media.</p>
   <a href="https://www.facebook.com/jefferson.gomes.14473426" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
   <a href="https://www.instagram.com/jefftheson_/" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram w3-hover-opacity"></i></a>
-  <a href="https://www.linkedin.com/in/jefferson-gomes-04b567238/" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
-  <a href="https://github.com/Raiobrine" target="_blank" rel="noopener noreferrer"><i class="fa fa-github w3-hover-opacity"></i></a>
-  <h6>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></h6>
+  <a href="https://www.linkedin.com/in/jefferson-gomes-raiobrine/" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+  <a href="https://github.com/jeffersongomesdamd" target="_blank" rel="noopener noreferrer"><i class="fa fa-github w3-hover-opacity"></i></a>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 
 </body>
